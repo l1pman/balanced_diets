@@ -1,0 +1,27 @@
+{% extends "balanced_diets/base.html" %}
+{% block content %}
+
+    <div class="container text-center" style="max-width: 300px; position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)">
+    <form method="post" action="{% url 'users:login' %}">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="id_username" class="form-label">Username</label>
+            <input type="text" name="username" class="form-control text-center" id="id_username">
+        </div>
+
+        <div class="mb-3">
+            <label for="id_password" class="form-label">Password</label>
+            <input type="password" name="password" class="form-control text-center" id="id_password">
+        </div>
+
+        <button type="submit" class="btn btn-dark"  style="background-color: #7DD93E !important">Login</button>
+        <input type="hidden" name="next" value="{% url 'balanced_diets:index' %}" />
+
+    </form>
+    </div>
+    {% if form.errors %}
+        <p>Your username and password didn't match!</p>
+    {% endif %}
+
+{% endblock content %}

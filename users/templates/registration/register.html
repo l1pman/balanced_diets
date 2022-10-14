@@ -1,0 +1,33 @@
+{% extends "balanced_diets/base.html" %}
+{% block content %}
+    <div class="container text-center" style="max-width: 300px; position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)">
+
+    <form method="post" action="{% url 'users:register' %}">
+        {% csrf_token %}
+
+         <div class="mb-3">
+            <label for="id_username" class="form-label">Username</label>
+            <input type="text" name="username" autocapitalize="none" maxlength="150" autocomplete="username" class="form-control text-center" autofocus required  id="id_username"aria-describedby="texthelp1">
+             <div id="texthelp1" class="form-text">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+             </div>
+         </div>
+
+        <div class="mb-3">
+            <label for="id_password1" class="form-label">Password</label>
+            <input type="password" name="password1" autocomplete="new-password" class="form-control text-center" required id="id_password1" aria-describedby="texthelp2">
+            <div id="texthelp2" class="form-text"><ul><li>Your password must contain at least 8 characters.</li><li>Your password can’t be entirely numeric.</li></ul>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="id_password2" class="form-label">Password confirmation</label>
+            <input type="password" name="password2" autocomplete="new-password"  class="form-control text-center" required id="id_password2">
+
+        </div>
+
+        <button type="submit" class="btn btn-dark" style="background-color: #7DD93E !important">Register</button>
+        <input type="hidden" name="next" value="{% url 'balanced_diets:index' %}" />
+
+    </form>
+    </div>
+{% endblock content %}
