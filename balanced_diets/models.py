@@ -30,12 +30,19 @@ class User(models.Model):
         ('M', 'Мужской'),
         ('F', 'Женский')
     ]
+    activities = [
+        ('1,2', 'Сидячий образ жизни.'),
+        ('1,375', 'До трех малоинтенсивных тренировок в неделю.'),
+        ('1,55', 'Тренировки три-четыре раза в неделю, тренировки интенсивные, но не тяжелые.'),
+        ('1,7', 'Ежедневные занятия спортом или ежедневная работа, связанная с большим количеством перемещений и ручного труда.'),
+        ('1,9', 'Экстремальная активность. Профессиональный спортсмен или работа с тяжестями и т.д.')
+    ]
     name = models.CharField(max_length=50)
     gender = models.CharField(max_length=10, choices=genders, default='')
     weight = models.IntegerField()
     height = models.IntegerField()
     age = models.IntegerField()
-    activity = models.CharField(max_length=30)
+    activity = models.CharField(max_length=50, choices=activities, default='')
     lactose = models.BooleanField(default=False)
     vegan = models.BooleanField(default=False)
     diabetes = models.BooleanField(default=False)

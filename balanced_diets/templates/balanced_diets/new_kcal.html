@@ -1,0 +1,69 @@
+{% extends "balanced_diets/base.html" %}
+{% block content %}
+<div class="container text-center" style="max-width: 500px; position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)">
+    <form action="{% url 'balanced_diets:new_kcal' %}" method='post'>
+        {% csrf_token %}
+
+        <div class="input-group mb-3">
+            <label for="id_gender" class="input-group-text">Gender&nbsp&nbsp</label>
+            <select class="form-select" name="gender" id="id_gender">
+            <option value="M">Мужской</option>
+            <option value="F">Женский</option>
+            </select>
+        </div>
+
+        <div class="input-group mb-3">
+            <label for="id_name" class="input-group-text">Name&nbsp&nbsp&nbsp&nbsp</label>
+            <input type="text" name="name" class="form-control text-center" id="id_name">
+        </div>
+
+        <div class="input-group mb-3">
+            <label for="id_weight" class="input-group-text">Weight&nbsp&nbsp</label>
+            <input type="number" name="weight" class="form-control text-center" id="id_weight">
+        </div>
+
+        <div class="input-group mb-3">
+            <label for="id_height" class="input-group-text">Height&nbsp&nbsp</label>
+            <input type="number" name="height" class="form-control text-center" id="id_height">
+        </div>
+
+        <div class="input-group mb-3">
+            <label for="id_age" class="input-group-text">Age&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
+            <input type="number" name="age" class="form-control text-center" id="id_age">
+        </div>
+
+        <div class="input-group mb-3">
+            <label for="id_activity" class="input-group-text">Activity</label>
+            <select class="form-select" name="activity" id="id_activity">
+            <option value="1,2">Сидячий образ жизни.</option>
+            <option value="1,375">До трех малоинтенсивных тренировок в неделю.</option>
+            <option value="1,55">Тренировки три-четыре раза в неделю, тренировки интенсивные, но не тяжелые.</option>
+            <option value="1,7">Ежедневные занятия спортом или ежедневная работа, связанная с большим количеством перемещений и ручного труда.</option>
+            <option value="1,9">Экстремальная активность. Профессиональный спортсмен или работа с тяжестями и т.д.</option>
+
+</select>
+        </div>
+
+        <div class="mb-3">
+            <label for="id_lactose" class="form-check-label">Lactose</label>
+            <input class="form-check-input" type="checkbox" name="lactose" class="form-control text-center" id="id_lactose">
+
+            <label for="id_vegan" class="form-check-label">Vegan</label>
+            <input class="form-check-input" type="checkbox" name="vegan" class="form-control text-center" id="id_vegan">
+
+            <label for="id_diabetes" class="form-check-label">Diabetes</label>
+            <input class="form-check-input" type="checkbox" name="diabetes" class="form-control text-center" id="id_diabetes">
+        </div>
+
+
+
+        <button type="submit" class="btn btn-dark"  style="background-color: #7DD93E !important">Submit</button>
+        <input type="hidden" name="next" value="{% url 'balanced_diets:index' %}" />
+
+    </form>
+    </div>
+
+
+
+
+{% endblock content %}
