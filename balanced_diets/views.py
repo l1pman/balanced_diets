@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 from django.http import HttpResponse
-from .models import User
+from .models import New_kcal
 from .forms import KcalForm
 
 def index(request):

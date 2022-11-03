@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 
 class Dish(models.Model):
@@ -25,7 +25,7 @@ class Recipe(models.Model):
     id_dish = models.ForeignKey(Dish, on_delete=models.DO_NOTHING)
     id_product = models.ForeignKey(Product, on_delete=models.DO_NOTHING)
 
-class User(models.Model):
+class New_kcal(models.Model):
     genders = [
         ('M', 'Мужской'),
         ('F', 'Женский')
@@ -37,7 +37,7 @@ class User(models.Model):
         ('1,7', 'Ежедневные занятия спортом или ежедневная работа, связанная с большим количеством перемещений и ручного труда.'),
         ('1,9', 'Экстремальная активность. Профессиональный спортсмен или работа с тяжестями и т.д.')
     ]
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=150)
     gender = models.CharField(max_length=10, choices=genders, default='')
     weight = models.IntegerField()
     height = models.IntegerField()
@@ -49,5 +49,5 @@ class User(models.Model):
 
 
 class exclusion_product(models.Model):
-    id_user = models.ForeignKey(User, on_delete=models.DO_NOTHING)
+    id_user = models.ForeignKey(New_kcal, on_delete=models.DO_NOTHING)
     id_product = models.ForeignKey(Product, on_delete=models.DO_NOTHING)

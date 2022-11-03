@@ -1,7 +1,8 @@
 from django import forms
-from .models import User
+from .models import New_kcal
+
 
 class KcalForm(forms.ModelForm):
     class Meta:
-        model = User
+        model = New_kcal
         fields = ['gender','name','weight','height','age','activity','lactose','vegan','diabetes']
