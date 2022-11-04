@@ -1,2 +1,20 @@
 {% extends "balanced_diets/base.html" %}
+{% block content %}
+    {% if kal is not None %}
+        <div style="margin-left: 10%">
+         <h1>
+        <ul class="list-group">Ваша суточная норма :
+            <li>Калории: {{kal}}</li>
+            <li>Белки: {{belki}}</li>
+            <li>Жиры: {{zhiri}}</li>
+            <li>Углеводы: {{ugl}}</li>
+        </ul>
+             </h1>
+        </div>
 
+
+
+    {% else %}
+        <h1> Подсчитайте калории на главной странице!</h1>
+    {% endif %}
+{% endblock content %}
