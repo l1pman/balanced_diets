@@ -3,14 +3,14 @@
     {% if kal is not None %}
         <div style="margin-left: 10%">
          <h1>
-        <ul class="list-group">Ваша суточная норма :
+        <ul class="list-group">Суточная норма пользователя {{user.username}}:
             <li>Калории: {{kal}}</li>
             <li>Белки: {{belki}}</li>
             <li>Жиры: {{zhiri}}</li>
             <li>Углеводы: {{ugl}}</li>
         </ul>
              </h1>
-              <a class="btn btn-dark" style="background-color: #d9b985" role="button" href="{% url 'balanced_diets:edit_kcal' %}">Изменить свои данные</a>
+              <a class="btn btn-dark"  role="button" href="{% url 'balanced_diets:edit_kcal' %}">Изменить свои данные</a>
         </div>
 
 

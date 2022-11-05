@@ -4,11 +4,11 @@
 <div class="d-grid gap-2 col-6 mx-auto" style="position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)">
 
     {% if name == user.Username %}
-    <a class="btn btn-dark" style="background-color: #d9b985" role="button" href="{% url 'balanced_diets:new_kcal' %}">Рассчитать КБЖУ</a>
-    <a class="btn btn-dark" style="background-color: #d9b985" type="button">Составить меню</a>
+    <a class="btn btn-dark"  role="button" href="{% url 'balanced_diets:new_kcal' %}">Рассчитать КБЖУ</a>
+    <a class="btn btn-dark"  type="button">Составить меню</a>
 
     {% else %}
-    <a class="btn btn-dark" style="background-color: #d9b985" type="button">Составить меню</a>
+    <a class="btn btn-dark"  type="button">Составить меню</a>
     {% endif %}
 
  </div>
