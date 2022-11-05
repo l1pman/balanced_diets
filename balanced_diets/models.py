@@ -48,7 +48,10 @@ class New_kcal(models.Model):
     diabetes = models.BooleanField(default=False)
 
     def get_kcal(self):
-        kcal_value = (10 * float(self.weight) + 6.25 * float(self.height) - 5 * float(self.age) + 5) * float(self.activity.replace(',', '.'))
+        if self.gender == 'M':
+            kcal_value = (10 * float(self.weight) + 6.25 * float(self.height) - 5 * float(self.age) + 5) * float(self.activity.replace(',', '.'))
+        elif self.gender == 'F':
+            kcal_value = (10 * float(self.weight) + 6.25 * float(self.height) - 5 * float(self.age) - 161) * float(self.activity.replace(',', '.'))
         belki = kcal_value * 0.3 / 4
         zhiri = kcal_value * 0.3 / 9
         uglevodi = kcal_value * 0.4 / 4
