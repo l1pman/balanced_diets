@@ -16,7 +16,8 @@ class Dish(models.Model):
     meal = models.CharField(max_length=15, choices=meals, default='')
     lactose = models.BooleanField()
     vegan = models.BooleanField()
-    diabetes = models.BooleanField()
+    href = models.CharField(max_length=150, default='https://daily-menu.ru/dailymenu/recipes')
+
 
 class Product(models.Model):
     name = models.CharField(max_length=50)

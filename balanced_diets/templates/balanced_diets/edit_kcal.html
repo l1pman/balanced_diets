@@ -1,6 +1,6 @@
 {% extends "balanced_diets/base.html" %}
 {% block content %}
-<div class="container text-center rounded" style=" max-width: 500px; position: absolute;top: 50%;left: 50%;margin-right: -50%;transform: translate(-50%, -50%)">
+<div class="container text-center rounded" style=" max-width: 300px; display: flex; justify-content: center; align-items: center; height: 100%; ">
     <form action="{% url 'balanced_diets:edit_kcal'%}" method='post'>
         {% csrf_token %}
 
@@ -48,14 +48,13 @@
             <label for="id_lactose" class="form-check-label">Lactose</label>
             <input class="form-check-input" type="checkbox" name="lactose" class="form-control text-center" id="id_lactose"
             {% if kcal.lactose %} checked {% endif %}>
+        </div>
+        <div class="mb-3">
 
             <label for="id_vegan" class="form-check-label">Vegan</label>
             <input class="form-check-input" type="checkbox" name="vegan" class="form-control text-center" id="id_vegan"
             {% if kcal.vegan %} checked {% endif %}>
 
-            <label for="id_diabetes" class="form-check-label">Diabetes</label>
-            <input class="form-check-input" type="checkbox" name="diabetes" class="form-control text-center" id="id_diabetes"
-            {% if kcal.diabetes %} checked {% endif %}>
 
         </div>
 
